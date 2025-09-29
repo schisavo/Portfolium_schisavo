@@ -1,0 +1,22 @@
+GitHub creará tu web en:
+
+https://<usuario>.github.io/<nombre-repo>
+
+
+⚠️ Importante:
+
+Si el repo se llama <usuario>.github.io → la web queda en la raíz https://<usuario>.github.io.
+
+Si el repo tiene cualquier otro nombre (ej. portafolio) → la URL será https://<usuario>.github.io/portafolio/.
+
+🔹 3. Flujo de trabajo a partir de aquí
+
+Editas index.html, styles.css o lo que quieras en tu PC.
+
+Guardas → pruebas en local (Live Server / Python).
+
+Cuando esté bien:
+
+git add .
+git commit -m "actualizo sección proyectos"
+git push origin main

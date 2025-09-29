@@ -83,7 +83,7 @@ document.getElementById("downloadBtn").addEventListener("click", function () {
   setTimeout(() => {
     const link = document.createElement("a");
     link.href = "assets/cv.pdf"; // ruta de tu CV
-    link.download = "cv.pdf";
+    link.download = "sebastian_chisavo_forero_cv.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
