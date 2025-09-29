@@ -1,18 +1,323 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mi Portafolio — Schisavo</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio 3D</title>
+  <!-- Swiper CSS (necesario para que funcione) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- DevIcons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <!-- Styles CSS -->
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <header><h1>Mi Portafolio</h1></header>
   <main>
-    <p>Hola — soy Schisavo. Aquí muestro proyectos y habilidades.</p>
-  </main>
-  <h1>Test deploy 1........................</h1>
+    <button class="hamburger" id="hamburgerBtn"> ☰ </button>
+    <!-- Menú lateral -->
+    <aside id="sidebar">
+      <div class="sidebar-header"></div>
+      <ul class="Links">
+        <li onclick="Navigate(0)" class="activeLink"><p>Home</p></li>
+        <li onclick="Navigate(1)"><p>About Me</p></li>
+        <li onclick="Navigate(2)"><p>Services</p></li>
+        <li onclick="Navigate(3)"><p>Projects</p></li>
+        <li onclick="Navigate(4)"><p>Contact Me</p></li>
+      </ul>
+    </aside>
 
-  <footer>© 2025 Schisavo</footer>
+    <!-- 3D Container -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Home -->
+        <div class="swiper-slide">
+          <div class="container"> 
+            <div class="card-container">
+              <div class="profile-card">
+                <img src="https://i.pinimg.com/736x/c4/f0/f2/c4f0f2797ed642ba379e9a0c0b2dc7e9.jpg" 
+                    alt="profile" class="profile-img">
+              </div> 
+
+              <div class="intro-card">
+                <h1>Hi! I'm <span class="stylized-name">Sebastian</span>,</h1>
+                <h2>A <span class="proffesions">Full stack Developer</span></h2>
+                <p class="heroine">
+                  Passionate about building modern, scalable web solutions.  
+                  Specialized in <strong>frontend & backend</strong> development with a focus on clean design and performance.
+                </p>
+                <div class="buttonGroup">
+                  <button class="primary-btn">Hire Me</button>
+                  <button class="secondary-btn">Contact Me</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- About me -->
+        <div class="swiper-slide">
+          <div class="container">
+              <div class="card-container about-container">
+                <!-- Información -->
+                <div class="info-card">
+                    <h1>About Me</h1>
+                  <p class="about-me-details">
+                    Hi, I'm <span> Sebastian Chisavo Forero</span>, a development enthusiast with a penchant for drawing and design.  
+                    My fascination with visual art and technology has led me to explore multiple facets of software development, from website creation to Android apps.  
+                    I'm also diving into AI, where I merge creativity with technology.
+                  </p>
+                  <div class="buttonGroup">
+                    <button class="secondary-btn download-btn" id="downloadBtn">
+                      Download CV
+                      <span class="progress-bar"></span>
+                    </button>
+                  </div>
+                  <div class="skills-card">
+                    <div class="personal_information">
+                      <h3>Personal Information</h3>
+                      <ul>
+                        <li><strong>Birthday</strong> 22-07-2004</li>
+                        <li><strong>Phone</strong> 3008350972</li>
+                        <li><strong>Email</strong> sebastianchisavoforero@gmail.com</li>
+                        <li><strong>Address</strong> Pereira - Risaralda - Colombia</li>
+                        <li><strong>Level</strong> <span>Technologist</span></li>
+                      </ul> 
+                      <div class="social_icons_container">
+                        <ul>
+                          <li><i class="devicon-html5-plain colored"></i></li>
+                          <li><i class="devicon-css3-plain colored"></i></li>
+                          <li><i class="devicon-javascript-plain colored"></i></li>
+                          <li><i class="devicon-typescript-plain colored"></i></li>
+                          <li><i class="devicon-python-plain colored"></i></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Información -->
+                <div class="info-card carrucel">
+                  <!-- Carrusel -->
+                      <div class="skills-card">
+                        <div class="skills-carousel">
+                          <button class="carousel-btn prev">‹</button>
+                          <div class="carousel-track">
+
+
+                              <!-- Tarjeta: Lenguajes -->
+                              <div class="skill-card">
+                                <h6>Lenguajes</h6>
+                                <ul>
+                                  <li><i class="devicon-html5-plain colored"></i> HTML</li>
+                                  <li><i class="devicon-css3-plain colored"></i> CSS</li>
+                                  <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
+                                  <li><i class="devicon-typescript-plain colored"></i> TypeScript</li>
+                                  <li><i class="devicon-python-plain colored"></i> Python</li>
+                                </ul>
+                              </div>
+
+                              <!-- Tarjeta: Bases de Datos -->
+                              <div class="skill-card">
+                                <h6>Bases de Datos</h6>
+                                <ul>
+                                  <li><i class="devicon-mysql-plain colored"></i> MySQL</li>
+                                  <li><i class="devicon-postgresql-plain colored"></i> PostgreSQL</li>
+                                  <li><i class="devicon-sqlite-plain colored"></i> SQLite</li>
+                                  <li><i class="devicon-mongodb-plain colored"></i> MongoDB</li>
+                                </ul>
+                              </div>
+
+                              <!-- Tarjeta: Frameworks -->
+                              <div class="skill-card">
+                                <h6>Frameworks</h6>
+                                <ul>
+                                  <li><i class="devicon-react-original colored"></i> React</li>
+                                  <li><i class="devicon-angularjs-plain colored"></i> Angular</li>
+                                  <li><i class="devicon-nodejs-plain colored"></i> Node.js</li>
+                                  <li><i class="devicon-django-plain colored"></i> Django</li>
+                                  <li><i class="devicon-flutter-plain colored"></i> Flutter</li>
+                                </ul>
+                              </div>
+
+                              <!-- Tarjeta: Herramientas -->
+                              <div class="skill-card">
+                                <h6>Herramientas</h6>
+                                <ul>
+                                  <li><i class="devicon-git-plain colored"></i> Git</li>
+                                  <li><i class="devicon-github-original colored"></i> GitHub</li>
+                                  <li><i class="devicon-docker-plain colored"></i> Docker</li>
+                                  <li><i class="devicon-figma-plain colored"></i> Figma</li>
+                                  <li><i class="devicon-blender-original colored"></i> Blender</li>
+                                </ul>
+                              </div>
+                              <!-- Tarjeta: Otros Intereses -->
+                              <div class="skill-card">
+                                <h6>Otros Intereses</h6>
+                                <ul>
+                                  <li>🤖 Inteligencia Artificial</li>
+                                  <li>🌐 Desarrollo Web y Móvil</li>
+                                  <li>🎮 Videojuegos</li>
+                                  <li>🗄️ Bases de Datos</li>
+                                  <li>🏗️ Arquitectura de Software</li>
+                                </ul>
+                              </div>
+                          </div>
+                          <button class="carousel-btn next">›</button>
+                        </div>
+                      </div>
+                </div>
+
+              </div>
+          </div>
+        </div>
+        
+        <!-- Services -->
+        <div class="swiper-slide">
+          <div class="container"> 
+            <h1>Services</h1>
+            <div class="card-container">
+              
+               <div class="grid-container">
+                  <div class="card">
+                    <h3>🎨 Diseño y 3D</h3>
+                    <p>Creación de experiencias visuales, modelado y diseño 3D enfocado 
+                      en estética moderna y profesional.</p>
+                  </div>
+
+                  <div class="card">
+                    <h3>🌐 Desarrollo de Sitios Web</h3>
+                    <p>Construcción de sitios web rápidos, responsivos y optimizados con 
+                      tecnologías modernas.</p>
+                  </div>
+
+                  <div class="card">
+                    <h3>📱 Desarrollo de Apps</h3>
+                    <p>Aplicaciones móviles multiplataforma, centradas en rendimiento y 
+                      experiencia de usuario.</p>
+                  </div>
+
+                  <div class="card">
+                    <h3>🎮 Apps Interactivas</h3>
+                    <p>Proyectos con Unity y Godot para crear juegos o experiencias 
+                      interactivas.</p>
+                  </div>
+
+                  <div class="card">
+                    <h3>🤖 Soluciones con AI</h3>
+                    <p>Integración de inteligencia artificial para potenciar proyectos 
+                      con herramientas inteligentes.</p>
+                  </div>
+
+                  <div class="card">
+                    <h3>⚙️ Automatización</h3>
+                    <p>Optimización de procesos con software a medida que mejora la 
+                      productividad.</p>
+                  </div>
+               </div>
+
+
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gallery -->
+        <div class="swiper-slide">
+          <div class="container">
+            <h1>Projects</h1> 
+            <div class="card-container">
+               <div class="grid-container">
+
+
+                  <div class="card">
+                    <h3>🎨 Diseño y 3D</h3>
+                    <p>Creación de experiencias visuales, modelado y diseño 3D enfocado 
+                      en estética moderna y profesional.</p>
+                  </div>
+
+                  <div class="card">
+                    <h3>🌐 Desarrollo de Sitios Web</h3>
+                    <p>Construcción de sitios web rápidos, responsivos y optimizados con 
+                      tecnologías modernas.</p>
+                  </div>
+
+                  <div class="card">
+                    <h3>📱 Desarrollo de Apps</h3>
+                    <p>Aplicaciones móviles multiplataforma, centradas en rendimiento y 
+                      experiencia de usuario.</p>
+                  </div>
+
+                  <div class="card">
+                    <h3>🎮 Apps Interactivas</h3>
+                    <p>Proyectos con Unity y Godot para crear juegos o experiencias 
+                      interactivas.</p>
+                  </div>
+
+                  <div class="card">
+                    <h3>🤖 Soluciones con AI</h3>
+                    <p>Integración de inteligencia artificial para potenciar proyectos 
+                      con herramientas inteligentes.</p>
+                  </div>
+
+                  <div class="card">
+                    <h3>⚙️ Automatización</h3>
+                    <p>Optimización de procesos con software a medida que mejora la 
+                      productividad.</p>
+                  </div>
+               </div>
+
+
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact -->
+        <div class="swiper-slide">
+          <div class="container">
+            <h1>Contact</h1> 
+            <div class="card-container">
+               <!-- Contact Me Section -->
+                <section class="contact-section" id="contact">
+                  <div class="contact-container">
+                    
+                    <!-- Formulario -->
+                    <form class="contact-form" action="https://formspree.io/f/tuID" method="POST">
+                      <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Correo</label>
+                        <input type="email" id="email" name="email" required placeholder="Tu correo">
+                      </div>
+                      <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Escribe tu mensaje..."></textarea>
+                      </div>
+                      <button type="submit" class="primary-btn">Enviar</button>
+                    </form>
+
+                    <!-- Botón WhatsApp -->
+                    <div class="whatsapp-container">
+                      <a href="https://wa.me/573008350982" target="_blank" class="whatsapp-btn">
+                        💬 Escríbeme en WhatsApp
+                      </a>
+                    </div>
+                  </div>
+                </section>
+
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+      <!-- Puntos -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </main>
+  <script src="main/script.js"></script>
 </body>
 </html>
