@@ -1,4 +1,4 @@
-/* Swiper controller */
+/* ··················  Swiper 3D controller  ·················· */
 const swiper = new Swiper(".swiper", {
   effect: "cube",
   allowTouchMove: false,
@@ -16,24 +16,45 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
+/* Control the navigation of the swiper */
 function Navigate(indx) {
+  swiper.slideTo(indx);
+  updateActiveLink(indx);
+}
+/* Update the styles when is change the section */
+function updateActiveLink(indx) {
   document.querySelectorAll(".Links li").forEach(li => li.classList.remove("activeLink"));
   document.querySelectorAll(".Links li")[indx].classList.add("activeLink");
   swiper.slideTo(indx);
 }
+swiper.on("slideChange", () => {
+  updateActiveLink(swiper.activeIndex);
+})
+
+/* ··················  Buttons Redirection ·················· */
+document.querySelectorAll("[data-target]").forEach(btn => {
+  btn.addEventListener("click", e => {
+    const target = parseInt(e.target.dataset.target);
+    swiper.slideTo(target);
+    updateActiveLink(target);
+  });
+});
+
+
+
 
 /* Hamburger Menu */
 const hamburgerBtn = document.getElementById("hamburgerBtn");
 const sidebar = document.getElementById("sidebar");
 const links = document.querySelectorAll(".Links li");
 
-// abrir/cerrar menú
+// Open/Close sidebar
 hamburgerBtn.addEventListener("click", () => {
   sidebar.classList.toggle("show");
   hamburgerBtn.classList.toggle("moved");
 });
 
-// cerrar al dar clic en un link
+// close when we select a section
 links.forEach(li => {
   li.addEventListener("click", () => {
     sidebar.classList.remove("show");
@@ -42,7 +63,7 @@ links.forEach(li => {
 });
 
 
-// Carrusel manual About
+// Carousel of About technologies
 const track = document.querySelector(".carousel-track");
 const cards = document.querySelectorAll(".skill-card");
 const prevBtn = document.querySelector(".carousel-btn.prev");
@@ -70,24 +91,16 @@ prevBtn.addEventListener("click", () => {
 document.getElementById("downloadBtn").addEventListener("click", function () {
   const btn = this;
   const bar = btn.querySelector(".progress-bar");
-  // restart animation
   bar.style.width = "0%";
-
-  // fuerza un reflow para que la transición se aplique
   void bar.offsetWidth;
-
-  // empieza animación
   bar.style.width = "100%";
-
-  // al terminar animación, dispara descarga
   setTimeout(() => {
     const link = document.createElement("a");
-    link.href = "assets/cv.pdf"; // ruta de tu CV
+    link.href = "assets/cv.pdf";
     link.download = "sebastian_chisavo_forero_cv.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-
     // reset bar
     bar.style.width = "0%";
   }, 1600);
